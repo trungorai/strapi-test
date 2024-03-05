@@ -4,7 +4,8 @@
   "info": {
     "singularName": "banner",
     "pluralName": "banners",
-    "displayName": "Banner"
+    "displayName": "Banner",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,18 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "target": {
+      "type": "string"
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "link": {
       "type": "string"
     }
   }
