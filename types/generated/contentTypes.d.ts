@@ -374,11 +374,12 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    content: Attribute.Text;
-    target: Attribute.String;
+    headline: Attribute.String;
+    body_message: Attribute.Text;
     linkText: Attribute.String;
     link: Attribute.String;
+    slider_time: Attribute.Integer;
+    media: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

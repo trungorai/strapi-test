@@ -12,20 +12,30 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "headline": {
       "type": "string"
     },
-    "content": {
+    "body_message": {
       "type": "text"
-    },
-    "target": {
-      "type": "string"
     },
     "linkText": {
       "type": "string"
     },
     "link": {
       "type": "string"
+    },
+    "slider_time": {
+      "type": "integer"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
