@@ -16,7 +16,7 @@ module.exports = ({ env }) => [
             "https://develop-v3.oraiswap-frontend.pages.dev",
             "http://localhost:3000",
             "https://oraidex-landingpage.pages.dev",
-            "https://fresh-harmony-bf37524082.strapiapp.com/",
+            "https://fresh-harmony-bf37524082.strapiapp.com",
           ],
     },
   },
