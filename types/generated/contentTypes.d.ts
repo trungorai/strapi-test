@@ -362,42 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.CollectionType {
-  collectionName: 'banners';
-  info: {
-    singularName: 'banner';
-    pluralName: 'banners';
-    displayName: 'Banner';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    headline: Attribute.String;
-    body_message: Attribute.Text;
-    linkText: Attribute.String;
-    link: Attribute.String;
-    slider_time: Attribute.Integer;
-    media: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -819,6 +783,76 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'Banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    body_message: Attribute.Text;
+    linkText: Attribute.String;
+    link: Attribute.String;
+    slider_time: Attribute.Integer;
+    media: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLandingpageNewLandingpageNew extends Schema.CollectionType {
+  collectionName: 'landingpage_news';
+  info: {
+    singularName: 'landingpage-new';
+    pluralName: 'landingpage-news';
+    displayName: 'Landingpage New';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    dateCreated: Attribute.String;
+    thumbnail: Attribute.Media;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::landingpage-new.landingpage-new',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::landingpage-new.landingpage-new',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -829,7 +863,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::banner.banner': ApiBannerBanner;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -838,6 +871,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::banner.banner': ApiBannerBanner;
+      'api::landingpage-new.landingpage-new': ApiLandingpageNewLandingpageNew;
     }
   }
 }
