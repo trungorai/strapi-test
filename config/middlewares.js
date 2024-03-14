@@ -8,7 +8,14 @@ module.exports = ({ env }) => [
     config: {
       enabled: true,
       headers: "*",
-      origin: env("CORS_ORIGINS").split(","),
+      origin: env("CORS_ORIGINS")
+        ? env("CORS_ORIGINS").split(",")
+        : [
+            "https://oraidex.io",
+            "https://develop-v3.oraiswap-frontend.pages.dev",
+            "http://localhost:3000",
+            "https://oraidex-landingpage.pages.dev",
+          ],
     },
   },
   "strapi::query",
