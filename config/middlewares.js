@@ -11,10 +11,12 @@ module.exports = ({ env }) => [
       origin: env("CORS_ORIGINS")
         ? env("CORS_ORIGINS").split(",")
         : [
+            "http://localhost:1337",
             "https://oraidex.io",
             "https://develop-v3.oraiswap-frontend.pages.dev",
             "http://localhost:3000",
             "https://oraidex-landingpage.pages.dev",
+            "https://fresh-harmony-bf37524082.strapiapp.com/",
           ],
     },
   },
